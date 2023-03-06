@@ -2,8 +2,10 @@ import std/[os, strutils, strformat]
 
 import climate/context
 
-import ../templates/[pages, routes]
-import ../templates/pages/page
+import ../utils
+import ../templates/app
+import ../templates/app/[pages, routes]
+import ../templates/app/pages/page
 
 
 const
@@ -25,19 +27,20 @@ proc info*(context: Context): int =
     echo() 
     echo usageText
 
-
 proc init*(context: Context): int =
   echo "Initializing new Sauer project..."
 
-  const
+  let
+    packageName = packageName()
+    nimbleFilePath = packageName.addFileExt("nimble")
+    appFilePath = "src" / packageName.addFileExt("nim")
     dirs = [
-      "src" / "pages",
-      "src" / "components"
+      "src" / packageName / "pages"
     ]
     files = {
-      "src" / "pages.nim": pages.content(["index"]),
-      "src" / "routes.nim": routes.content({"/": "index"}),
-      "src" / "pages" / "index.nim": page.content("index")
+      "src" / packageName / "pages.nim": pages.content(["index"]),
+      "src" / packageName / "routes.nim": routes.content({"/": "index"}),
+      "src" / packageName / "pages" / "index.nim": page.content("index")
     }
     requirements = [
       "requires \"karax >= 1.2.3\"",
@@ -53,14 +56,19 @@ proc init*(context: Context): int =
     echo(fmt"Creating file {file}".indent(4))
     file.writeFile(content)
 
-  for filename in walkFiles("*.nimble"):
-    echo(fmt"Adding requirements to {filename}:".indent(4))
+  echo(fmt"Adding requirements to {nimbleFilePath}:".indent(4))
 
-    let file = filename.open(fmAppend)
+  let nimbleFile = nimbleFilePath.open(fmAppend)
 
-    for requirement in requirements:
-      echo(requirement.indent(8))
-      file.writeLine(requirement)
+  for requirement in requirements:
+    echo(requirement.indent(8))
+    nimbleFile.writeLine(requirement)
+
+  close nimbleFile
+
+  echo fmt"Patching {appFilePath}...".indent(4)
+
+  appFilePath.writeFile(app.content(packageName))
 
   echo "Done!"
 

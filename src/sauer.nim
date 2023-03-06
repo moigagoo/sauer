@@ -1,6 +1,6 @@
 import climate
 
-import commands/[sauer, pages, routes]
+import sauer/commands/[sauer, pages, routes]
 
 
 const commands = {
