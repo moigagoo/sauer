@@ -1,0 +1,3 @@
+type Page* = enum
+  index
+
