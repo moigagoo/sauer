@@ -3,11 +3,12 @@ import kraut/context
 
 import ../pages
 import ../state
+import ../components/layout
 
 
 proc render*(context: Context): VNode =
   currentPage = Page.index
 
-  buildHtml(tdiv):
+  layout.render:
     h1: text "index"
 

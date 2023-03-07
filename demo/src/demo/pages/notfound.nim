@@ -3,11 +3,12 @@ import kraut/context
 
 import ../pages
 import ../state
+import ../components/layout
 
 
 proc render*(context: Context): VNode =
   currentPage = Page.notfound
 
-  buildHtml(tdiv):
+  layout.render:
     h1: text "notfound"
 
