@@ -1,9 +1,11 @@
+#? stdtmpl
+#proc content*(packageName: string): string =
 import karax/karax
 
 import kraut
 
-import demo/routes
-import demo/pages/notfound
+import ${packageName}/routes
+import ${packageName}/pages/notfound
 
 
 let renderer = routeRenderer(routes.routes, defaultRenderer = notfound.render)

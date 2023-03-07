@@ -4,4 +4,3 @@ type Page* = enum
   #for page in pages:
   $page
   #end for
-

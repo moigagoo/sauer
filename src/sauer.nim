@@ -1,14 +1,13 @@
 import climate
 
-import commands/[sauer, pages, routes]
+import sauer/commands/[sauer, pages]
 
 
 const commands = {
   "init": sauer.init,
   "pages new": pages.new,
-  "routes update": routes.update
 }
 
 
-quit parseCommands(commands, defaultHandler = sauer.info)
+quit parseCommands(commands, defaultHandler = sauer.help)
 
