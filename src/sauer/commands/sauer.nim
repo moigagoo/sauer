@@ -1,4 +1,4 @@
-import std/[os, strutils, strformat]
+import std/[os, strutils, strformat, browsers]
 
 import climate/context
 
@@ -22,9 +22,13 @@ Available commands:
 
 
 proc help*(context: Context): int =
+  ## Show help text.
+
   echo helpText
 
 proc init*(context: Context): int =
+  ## Initialize new Sauer project.
+
   echo "Initializing new Sauer project..."
 
   let
@@ -54,4 +58,16 @@ proc init*(context: Context): int =
   close nimbleFile
 
   echo "Done!"
+
+proc make*(context: Context): int =
+  ## Invoke `nimble make`.
+  
+  execShellCmd("nimble make")
+
+proc serve*(context: Context): int =
+  ## Invoke `nimble serve` and open the default browser.
+
+  openDefaultBrowser("http://localhost:1337/app.html#/")
+
+  execShellCmd("nimble serve")
 
