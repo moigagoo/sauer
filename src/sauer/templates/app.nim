@@ -5,7 +5,10 @@ import karax/karax
 import kraut
 
 import ${packageName}/routes
+import ${packageName}/pages/notfound
 
 
-setRenderer(routeRenderer(routes.routes))
+let renderer = routeRenderer(routes.routes, defaultRenderer = notfound.render)
+
+setRenderer(renderer)
 

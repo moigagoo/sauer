@@ -1,12 +1,9 @@
 #? stdtmpl
-#import std/[strutils, sequtils]
-#proc content*(pages: openArray[tuple[route, pageName: string]]): string =
-import pages/[${pages.mapIt(it.pageName).join(", ")}]
+#proc content*(pages: openArray[tuple[pattern, moduleName: string]]): string =
+import kraut/sugar
 
 
-const routes* = {
-  #for (route, pageName) in pages:
-  "${route}": ${pagename}.render,
+routes:
+  #for (pattern, moduleName) in pages:
+  "${pattern}": ${moduleName}
   #end for
-}
-

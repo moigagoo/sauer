@@ -1,7 +1,5 @@
-import pages/[index]
+import kraut/sugar
 
 
-const routes* = {
-  "/": index.render,
-}
-
+routes:
+  "/": index
