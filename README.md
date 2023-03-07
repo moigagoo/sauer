@@ -22,8 +22,8 @@ requires "sauer >= 1.0.0"
 
 1. Generate a new Nim project with `nimble init`.
 2. In the project directory, run `sauer init`.
-3. Build the app by running `sauer make`.
-4. See the app in action by running `sauer serve` and opening `http://localhost:1337/app.html#/" in your browser.
+3. Build the app by running `nimble make`.
+4. See the app in action by running `nimble serve` and opening `http://localhost:1337/app.html#/"` in your browser.
 5. To add a new page, run `sauer page new mynewpage --route="#/my/new/location/"` and rebuild the app. You should now see your page on `http://localhost:1337/app.html#/my/new/location/`.
 6. To add a page with URL params, use placeholders: `sauer page new cat --route="#/cats/{catName}/"`
 
