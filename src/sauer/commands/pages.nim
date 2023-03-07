@@ -36,7 +36,6 @@ proc new*(context: Context): int =
       else:
         normalizeRoute(name)
     packageName = packageName()
-    pageNames = pageNames()
     pageFilePath = "src" / packageName / "pages" / name.addFileExt("nim")
     pagesFilePath = "src" / packageName / "pages.nim"
     routesFilePath = "src" / packageName / "routes.nim"
@@ -57,4 +56,12 @@ proc new*(context: Context): int =
   close pagesFile
 
   echo "Done!"
+
+proc list*(context: Context): int =
+  var pageNames: seq[string]
+
+  echo "Pages:"
+
+  for filename in walkFiles("src" / packageName() / "pages" / "*.nim"):
+    echo splitFile(filename).name.indent(4)
 

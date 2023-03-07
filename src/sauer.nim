@@ -6,6 +6,7 @@ import sauer/commands/[sauer, pages]
 const commands = {
   "init": sauer.init,
   "pages new": pages.new,
+  "pages list": pages.list
 }
 
 

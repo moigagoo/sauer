@@ -17,6 +17,7 @@ Version: 1.0.0
 Available commands:
     sauer init                initialize new Sauer project in the current directory
     sauer pages new           add new page
+    sauer pages list          list pages
 """
 
 
