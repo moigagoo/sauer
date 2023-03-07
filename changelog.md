@@ -7,6 +7,10 @@
 -   [t]—test suite improvement
 -   [d]—docs improvement
 
+## 1.0.1 (WIP)
+
+-   [+] Add `sauer pages list` command.
+
 
 ## 1.0.0 (March 7, 2023)
 
