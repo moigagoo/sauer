@@ -16,6 +16,8 @@ Version: 1.0.0
 
 Available commands:
     sauer init                initialize new Sauer project in the current directory
+    sauer make                build the app
+    sauer serve [--browse|-b] serve the app [and open it in the default browser]
     sauer pages new           add new page
     sauer pages list          list pages
 """
@@ -67,7 +69,8 @@ proc make*(context: Context): int =
 proc serve*(context: Context): int =
   ## Invoke `nimble serve` and open the default browser.
 
-  openDefaultBrowser("http://localhost:1337/app.html#/")
+  if context.cmdOptions.hasKey("browse") or context.cmdOptions.hasKey("b"):
+    openDefaultBrowser("http://localhost:1337/app.html#/")
 
   execShellCmd("nimble serve")
 
