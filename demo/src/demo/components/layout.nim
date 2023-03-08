@@ -7,7 +7,8 @@ template render*(body: untyped): untyped =
   buildHtml(tdiv):
     navbar.render()
 
-    body
+    main:
+      body
 
     footer.render()
 
