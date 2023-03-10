@@ -2,6 +2,7 @@ import karax/[karaxdsl, kbase, vstyles, vdom]
 
 import ../pages
 import ../state
+import panel
 
 
 const
@@ -10,10 +11,16 @@ const
     Page.notfound: ("404", "#/does/not/exist")
   }
 
+let
+  topPanelStyle = style {
+    background: kstring "pink",
+    height: kstring topPanelHeight
+  }
+  topPanel = initPanel(sticky = true, customStyle = topPanelStyle)
 
 proc render*: VNode =
   buildHtml:
-    tdiv(style = {width: "100%", height: "40px", background: "aliceblue"}):
+    topPanel.render:
       for (page, link) in entries: 
         span(style = {paddingRight: "10px"}):
           if page == currentPage:

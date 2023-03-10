@@ -10,6 +10,7 @@ proc render*(context: Context): VNode =
   currentPage = Page.notfound
   document.title = "notfound"
 
-  layout.render:
-    h1: text "notfound"
+  buildHtml:
+    layout.render:
+      h1: text "notfound"
 

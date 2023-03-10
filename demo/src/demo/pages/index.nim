@@ -10,6 +10,10 @@ proc render*(context: Context): VNode =
   currentPage = Page.index
   document.title = "index"
 
-  layout.render:
-    h1: text "index"
+  buildHtml:
+    layout.render:
+      h1: text "index"
 
+      for i in 1..100:
+        p:
+          text "Lorem ipsum"

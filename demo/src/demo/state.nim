@@ -1,5 +1,9 @@
 import pages
 
 
-var currentPage*: Page
+var
+  currentPage*: Page
+
+const
+  topPanelHeight* = "40px"
 
