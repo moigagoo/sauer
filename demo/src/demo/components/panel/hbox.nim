@@ -8,12 +8,12 @@ type
     ltr, rtl
   Alignment* = enum
     top, center, bottom
-  Box* = object of Component
+  HBox* = object of Component
     flex*: Natural = 1
     direction* = ltr
 
 
-proc initBox*(flex: Natural = 1, direction = ltr, alignment = center, customStyle = style()): Box =
+proc initHBox*(flex: Natural = 1, direction = ltr, alignment = center, customStyle = style()): HBox =
   let
     flexDirection = case direction
       of ltr:
@@ -34,5 +34,5 @@ proc initBox*(flex: Natural = 1, direction = ltr, alignment = center, customStyl
       StyleAttr.alignItems: kstring alignItems
     }
 
-  Box(flex: flex, style: defaultStyle.merge(customStyle))
+  HBox(flex: flex, style: defaultStyle.merge(customStyle))
 
