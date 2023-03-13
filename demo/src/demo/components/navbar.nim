@@ -2,7 +2,7 @@ import karax/[karaxdsl, kbase, vstyles, vdom]
 
 import ../pages
 import ../state
-import component, panel
+import component, toppanel
 import panel/[hbox, spacer]
 
 
@@ -17,7 +17,7 @@ let
     background: kstring "pink",
     height: kstring topPanelHeight
   }
-  topPanel = initPanel(sticky = true, customStyle = topPanelStyle)
+  navPanel = initTopPanel(sticky = true, customStyle = topPanelStyle)
   topSpacer = initSpacer(1, customStyle= style {maxWidth: kstring "40px"})
   topHBox = initHBox(12, customStyle = style {background: kstring "gray"})
   topSpacer2 = initSpacer(5)
@@ -26,7 +26,7 @@ let
 
 proc render*: VNode =
   buildHtml:
-    topPanel.render buildHtml(tdiv) do:
+    navPanel.render buildHtml(tdiv) do:
       topSpacer.render()
       topHBox.render buildHtml(tdiv) do:
         for (page, link) in entries: 
@@ -38,6 +38,6 @@ proc render*: VNode =
               a(href = kstring link[1]): text link[0]
       topSpacer2.render()
       topHBox2.render buildHtml(tdiv) do:
-        a(href = "https://ddg.gg/", target = "_blank"):
-          text "DuckDuckGo →"
+        # a(href = "https://ddg.gg/", target = "_blank"):
+        text "DuckDuckGo →"
 

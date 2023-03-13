@@ -5,27 +5,27 @@ import ../component
 
 type
   Direction* = enum
-    ltr, rtl
+    ttb, btt 
   Alignment* = enum
-    top, center, bottom
-  HBox* = object of Component
+    left, center, right
+  VBox* = object of Component
     flex*: Natural = 1
-    direction* = ltr
+    direction* = ttb
 
 
-proc initHBox*(flex: Natural = 1, direction = ltr, alignment = center, customStyle = style()): HBox =
+proc initVBox*(flex: Natural = 1, direction = ttb, alignment = left, customStyle = style()): VBox =
   let
     flexDirection = case direction
-      of ltr:
-        "row"
-      of rtl:
-        "row-reverse"
+      of ttb:
+        "column"
+      of btt:
+        "column-reverse"
     alignItems = case alignment
-      of top:
+      of left:
         "normal"
       of center:
         "center"
-      of bottom:
+      of right:
         "end"
     defaultStyle = style {
       StyleAttr.display: kstring "flex",
@@ -34,5 +34,5 @@ proc initHBox*(flex: Natural = 1, direction = ltr, alignment = center, customSty
       StyleAttr.alignItems: kstring alignItems
     }
 
-  HBox(flex: flex, style: defaultStyle.merge(customStyle))
+  VBox(flex: flex, style: defaultStyle.merge(customStyle))
 

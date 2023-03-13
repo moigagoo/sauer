@@ -3,11 +3,11 @@ import karax/[kbase, vstyles]
 import component
 
 
-type Panel* = object of Component
+type TopPanel* = object of Component
   sticky*: bool 
 
 
-proc initPanel*(sticky = false, customStyle = style()): Panel =
+proc initTopPanel*(sticky = false, customStyle = style()): TopPanel =
   let
     defaultStyle = style {
       StyleAttr.width: kstring "100%",
@@ -22,5 +22,5 @@ proc initPanel*(sticky = false, customStyle = style()): Panel =
       else:
         style()
 
-  Panel(sticky: sticky, style: defaultStyle.merge(stickyStyle).merge(customStyle))
+  TopPanel(sticky: sticky, style: defaultStyle.merge(stickyStyle).merge(customStyle))
 
