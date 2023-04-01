@@ -11,6 +11,6 @@ proc render*(context: Context): VNode =
   document.title = "notfound"
 
   buildHtml:
-    layout.render:
+    layout.render buildHtml(tdiv) do:
       h1: text "notfound"
 

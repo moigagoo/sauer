@@ -1,4 +1,6 @@
-import karax/[karaxdsl, kbase, vstyles, vdom]
+import std/sugar
+
+import karax/[karax, karaxdsl, kbase, vstyles, vdom]
 
 import ../pages
 import ../state
@@ -12,7 +14,7 @@ const
     Page.notfound: ("404", "#/does/not/exist")
   }
 
-let
+var
   topPanelStyle = style {
     background: kstring "pink",
     height: kstring topPanelHeight
@@ -22,22 +24,35 @@ let
   topHBox = initHBox(12, customStyle = style {background: kstring "gray"})
   topSpacer2 = initSpacer(5)
   topHBox2 = initHBox(2, rtl, customStyle = style {background: kstring "orange", minWidth: "200px"})
-
+  activeEntry = -1 
+  entryHBoxes = collect:
+    for i, e in entries:
+      capture i:
+        (i, e, initHBox(), proc() = activeEntry = i)
 
 proc render*: VNode =
   buildHtml:
     navPanel.render buildHtml(tdiv) do:
       topSpacer.render()
+
       topHBox.render buildHtml(tdiv) do:
-        for (page, link) in entries: 
-          let entryHBox = initHBox()
-          entryHBox.render buildHtml(tdiv) do:
-            if page == currentPage:
-              text link[0]
+        for (i, entry, box, p) in entryHBoxes:
+          let s =
+            if i == activeEntry:
+              style {background: kstring "red"}
             else:
-              a(href = kstring link[1]): text link[0]
+              style()
+
+          box.render buildHtml do:
+            tdiv(onMouseOver = p, onMouseOut = proc() = activeEntry = -1, style = s):
+              if entry[0] == currentPage:
+                text entry[1][0]
+              else:
+                a(href = kstring entry[1][1]):
+                  text entry[1][0]
+
       topSpacer2.render()
+
       topHBox2.render buildHtml(tdiv) do:
-        # a(href = "https://ddg.gg/", target = "_blank"):
         text "DuckDuckGo →"
 

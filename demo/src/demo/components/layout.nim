@@ -3,12 +3,12 @@ import karax/[karaxdsl, vdom]
 import navbar, footer
 
 
-template render*(body: untyped): untyped =
+proc render*(content: VNode): VNode =
   buildHtml(tdiv):
     navbar.render()
 
     main:
-      body
+      content
 
     footer.render()
 

@@ -11,9 +11,10 @@ proc render*(context: Context): VNode =
   document.title = "index"
 
   buildHtml:
-    layout.render:
+    layout.render buildHtml(tdiv) do:
       h1: text "index"
 
       for i in 1..100:
         p:
           text "Lorem ipsum"
+
