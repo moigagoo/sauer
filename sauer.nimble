@@ -11,6 +11,6 @@ bin           = @["sauer"]
 
 # Dependencies
 
-requires "nim >= 1.9.1"
+requires "nim >= 1.6.12"
 requires "climate >= 1.0.3"
 
