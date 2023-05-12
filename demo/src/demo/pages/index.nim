@@ -1,8 +1,20 @@
-import karax/[karaxdsl, vdom]
+import karax/[karaxdsl, kdom, vdom]
 import kraut/context
+
+import ../pages
+import ../state
+import ../components/layout
 
 
 proc render*(context: Context): VNode =
-  buildHtml(tdiv):
-    h1: text "index"
+  currentPage = Page.index
+  document.title = "index"
+
+  buildHtml:
+    layout.render buildHtml(tdiv) do:
+      h1: text "index"
+
+      for i in 1..100:
+        p:
+          text "Lorem ipsum"
 

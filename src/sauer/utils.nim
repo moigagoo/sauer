@@ -18,9 +18,3 @@ proc normalizeRoute*(route: string): string =
 
   result = "#/" & result & "/"
 
-proc pageNames*: seq[string] =
-  ## Get page names by walking files in "src/<appName>/pages/" directory.
-
-  for filename in walkFiles("src" / packageName() / "pages" / "*.nim"):
-    result.add splitFile(filename).name
-

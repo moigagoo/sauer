@@ -1,9 +1,16 @@
-import karax/[karaxdsl, vdom]
+import karax/[karaxdsl, kdom, vdom]
 import kraut/context
+
+import ../pages
+import ../state
+import ../components/layout
 
 
 proc render*(context: Context): VNode =
-  buildHtml(tdiv):
-    h1: text "Not found"
-    a(href = "#/"): text "🏠"
+  currentPage = Page.notfound
+  document.title = "notfound"
+
+  buildHtml:
+    layout.render buildHtml(tdiv) do:
+      h1: text "notfound"
 
