@@ -51,10 +51,10 @@ proc init*(context: Context): int =
     echo(fmt"Creating {file}".indent(4))
     file.writeFile(content)
 
-  echo(fmt"Patching {appFilePath}...".indent(4))
+  echo(fmt"Patching {appFilePath}".indent(4))
   appFilePath.writeFile(app.content(packageName))
 
-  echo(fmt"Patching {nimbleFilePath}...".indent(4))
+  echo(fmt"Patching {nimbleFilePath}".indent(4))
   let nimbleFile = nimbleFilePath.open(fmAppend)
   nimbleFile.write(appnimble.content(packageName))
   close nimbleFile
