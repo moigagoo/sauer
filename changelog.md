@@ -7,6 +7,12 @@
 -   [t]—test suite improvement
 -   [d]—docs improvement
 
+
+## 1.0.2 (May 12, 2023)
+
+-   [f] Bump version in help message.
+
+
 ## 1.0.1 (May 12, 2023)
 
 -   [+] Add `sauer pages list` command.
