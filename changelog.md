@@ -10,6 +10,11 @@
 
 ## 1.0.2 (May 12, 2023)
 
+-   [f] Replace NimHTTPd with static_server in `sauer serve`.
+
+
+## 1.0.2 (May 12, 2023)
+
 -   [f] Bump version in help message.
 
 
