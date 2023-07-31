@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+## 1.0.3 (July 31, 2023)
+
+-   [f] Remove Nim devel dependency by updating the required Kraut version.
+
+
 ## 1.0.2 (May 12, 2023)
 
 -   [f] Replace NimHTTPd with static_server in `sauer serve`.

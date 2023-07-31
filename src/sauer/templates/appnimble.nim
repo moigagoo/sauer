@@ -1,6 +1,6 @@
 #? stdtmpl
 #proc content*(packageName: string): string =
-requires "karax >= 1.2.3", "kraut >= 1.0.1"
+requires "karax >= 1.3.0", "kraut >= 1.0.3"
 
 taskRequires "serve", "static_server >= 2.2.1"
 
