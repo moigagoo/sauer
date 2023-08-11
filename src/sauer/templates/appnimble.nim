@@ -8,10 +8,10 @@ taskRequires "serve", "static_server >= 2.2.1"
 ${"# Tasks"}
 
 task make, "Build the app":
-  exec "karun src/${packageName}.nim"
+  exec findExe("karun") & " src/${packageName}.nim"
 
 task serve, "Serve the app with a local server":
   echo "The app is served at: http://localhost:1337/app.html#/"
   echo()
-  exec "static_server"
+  exec findExe("static_server")
 
