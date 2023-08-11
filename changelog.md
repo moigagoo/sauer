@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+## 1.0.6 (August 11, 2023)
+
+-   [f] Update Sauer version in help message.
+
+
 ## 1.0.5 (August 11, 2023)
 
 -   [f] Tasks fixed on Windows.
