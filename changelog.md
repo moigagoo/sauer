@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+## 1.0.5 (August 11, 2023)
+
+-   [f] Tasks fixed on Windows.
+
+
 ## 1.0.4 (July 31, 2023)
 
 -   [f] Remove Nim devel dependency by updating the required Kraut version.
