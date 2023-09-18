@@ -8,7 +8,7 @@
 -   [d]—docs improvement
 
 
-## 1.0.7 (WIP)
+## 1.0.7 (September 18, 2023)
 
 -   [+] Add `--watch`, `-w` flag to `make` command to remake the app on changes in `src` dir.
 -   [+] Add `--serve`, `-s` flag to `make` command to serve the app after making.
