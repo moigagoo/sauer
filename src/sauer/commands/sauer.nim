@@ -1,6 +1,6 @@
-import std/[os, strutils, strformat, browsers]
+import std/[os, osproc, strutils, strformat, browsers, with, tables, times]
 
-import climate/context
+import climate/[context, sugar]
 
 import ../utils
 import ../templates/app
@@ -27,6 +27,7 @@ proc help*(context: Context): int =
   ## Show help text.
 
   echo helpText
+
 
 proc init*(context: Context): int =
   ## Initialize new Sauer project.
@@ -61,10 +62,36 @@ proc init*(context: Context): int =
 
   echo "Done!"
 
+
 proc make*(context: Context): int =
   ## Invoke `nimble make`.
-  
-  execShellCmd("nimble make")
+
+  var
+    modTimes: Table[string, Time]
+    period: float = 1
+
+  discard execShellCmd("nimble make")
+
+  with context:
+    opt("serve", "s"):
+      let server = startProcess("nimble serve", options = {poEvalCommand})
+      echo server.running
+    opt("period", "p"):
+      period = parseFloat(val)
+    opt("watch", "w"):
+      for file in walkDirRec("src"):
+        modTimes[file] = getLastModificationTime(file)
+
+      while true:
+        for file in walkDirRec("src"):
+          let modTime = getLastModificationTime(file)
+
+          if modTime > modTimes[file]:
+            discard execShellCmd("nimble make")
+            modTimes[file] = modTime
+
+        sleep (period * 1000).toInt
+
 
 proc serve*(context: Context): int =
   ## Invoke `nimble serve` and open the default browser.
