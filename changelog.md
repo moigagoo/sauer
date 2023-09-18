@@ -8,6 +8,12 @@
 -   [d]—docs improvement
 
 
+## 1.0.7 (WIP)
+
+-   [+] Add `--watch`, `-w` flag to `make` command to remake the app on changes in `src` dir.
+-   [+] Add `--serve`, `-s` flag to `make` command to serve the app after making.
+
+
 ## 1.0.6 (August 11, 2023)
 
 -   [f] Update Sauer version in help message.
