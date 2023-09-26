@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+## 1.0.8 (September 26, 2023)
+
+-   [f] Bump version in help message.
+
+
 ## 1.0.7 (September 18, 2023)
 
 -   [+] Add `--watch`, `-w` flag to `make` command to remake the app on changes in `src` dir.
