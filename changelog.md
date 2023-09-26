@@ -7,6 +7,10 @@
 -   [t]—test suite improvement
 -   [d]—docs improvement
 
+## 1.0.7 (September 18, 2023)
+
+-   [f] Bump version in help message.
+
 
 ## 1.0.7 (September 18, 2023)
 

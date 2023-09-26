@@ -12,7 +12,7 @@ import ../templates/app/pages/page
 const
   helpText = """Welcome to Sauer!
 
-Version: 1.0.6
+Version: 1.0.8
 
 Available commands:
     sauer init                initialize new Sauer project in the current directory
