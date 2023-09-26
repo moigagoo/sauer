@@ -75,7 +75,6 @@ proc make*(context: Context): int =
   with context:
     opt("serve", "s"):
       let server = startProcess("nimble serve", options = {poEvalCommand})
-      echo server.running
     opt("period", "p"):
       period = parseFloat(val)
     opt("watch", "w"):
