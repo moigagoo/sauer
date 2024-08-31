@@ -2,7 +2,7 @@
 
 version       = "1.0.8"
 author        = "Constantine Molchanov"
-description   = "Scaffolder for Karax."
+description   = "Scaffolder for Karax, with Karkas in mind."
 license       = "MIT"
 srcDir        = "src"
 binDir        = "bin"
@@ -11,6 +11,6 @@ bin           = @["sauer"]
 
 # Dependencies
 
-requires "nim >= 1.6.12"
-requires "climate >= 1.0.3"
+requires "nim >= 2.0.8"
+requires "climate ~= 1.1.1"
 
