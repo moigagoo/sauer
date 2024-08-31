@@ -1,8 +1,7 @@
 import karax/[karaxdsl, kdom, vdom]
-import kraut/context
+import kraut
 
-import ../pages
-import ../state
+import ../[pages, state]
 import ../components/layout
 
 
