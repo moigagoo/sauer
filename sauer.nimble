@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0.8"
+version       = "1.1.0"
 author        = "Constantine Molchanov"
 description   = "Scaffolder for Karax, with Karkas in mind."
 license       = "MIT"
