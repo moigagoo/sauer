@@ -12,9 +12,9 @@ const
     sauer pages new <name> --route=<route>
     sauer pages new <name> --default|-d
 
-    --name                  unique page name, must be a valid Nim enum value 
+    <name>                  unique page name, must be a valid Nim enum value 
     --route                 page route, can contain placehodlers, e.g. "/users/{userId}"
-    --default|-d            generate route from name, i.e. if name is "users", the route is "#/users/".
+    --default|-d            generate route from name, i.e. if name is "users", the route is "/users/"
   """
 
 
