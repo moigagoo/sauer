@@ -1,6 +1,6 @@
 import std/[os, osproc, strutils, strformat, browsers, with, tables, times]
 
-import climate/[context, sugar]
+import climate
 
 import ../utils
 import ../templates/app
