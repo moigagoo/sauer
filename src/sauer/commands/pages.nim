@@ -1,6 +1,6 @@
 import std/[os, strutils, strformat]
 
-import climate/context
+import climate
 
 import ../utils
 import ../templates/app/pages/page

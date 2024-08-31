@@ -8,6 +8,13 @@
 -   [d]—docs improvement
 
 
+## 1.1.0 (August 31, 2024)
+
+-   [!][+] Produce code that uses Kraut 1.2.x. 
+-   [!][r] Use Climate 1.1.x.
+-   [!][r] Require Nim 2.0.x for the shorter local import syntax to work.
+
+
 ## 1.0.8 (September 26, 2023)
 
 -   [f] Bump version in help message.
