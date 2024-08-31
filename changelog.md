@@ -8,6 +8,11 @@
 -   [d]—docs improvement
 
 
+## 1.1.1 (August 31, 2024)
+
+-   [f] Improve help message for `sauer pages new` command.
+
+
 ## 1.1.0 (August 31, 2024)
 
 -   [!][+] Produce code that uses Kraut 1.2.x. 
