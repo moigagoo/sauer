@@ -3,8 +3,7 @@
 import karax/[karaxdsl, kdom, vdom]
 import kraut/context
 
-import ../pages
-import ../state
+import ../[pages, state]
 
 
 proc render*(context: Context): VNode =

@@ -3,5 +3,6 @@
 import pages
 
 
-var currentPage*: Page
+var
+  currentPage*: Page
 
