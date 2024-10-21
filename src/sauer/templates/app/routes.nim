@@ -1,6 +1,6 @@
 #? stdtmpl
 #proc content*(pages: openArray[tuple[pattern, moduleName: string]]): string =
-import kraut/sugar
+import kraut
 
 
 routes:

@@ -1,7 +1,7 @@
 #? stdtmpl
 #proc content*(pageName: string): string =
 import karax/[karaxdsl, kdom, vdom]
-import kraut/context
+import kraut
 
 import ../[pages, state]
 

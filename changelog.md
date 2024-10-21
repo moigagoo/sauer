@@ -7,6 +7,10 @@
 -   [t]—test suite improvement
 -   [d]—docs improvement
 
+## 1.1.2 (October 21, 2024)
+
+-   [f] Upgrade imports for Kraut 1.2.x compatibility.
+
 
 ## 1.1.1 (August 31, 2024)
 
